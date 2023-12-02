@@ -22,9 +22,6 @@
   }
 
   function resetTab() {
-    while (data[currentTab - 1].priorities.length > 0) {
-        data[currentTab - 1].priorities.splice(0, 1);
-    }
     for (const key in template) {
       data[currentTab - 1][key] = JSON.parse(JSON.stringify(template[key]));
     }
