@@ -22,7 +22,9 @@
   }
 
   function resetTab() {
-    data[currentTab - 1] = template;
+    for (const key in template) {
+      data[currentTab - 1][key] = JSON.parse(JSON.stringify(template[key]));
+    }
   }
 
   if (localStorage.getItem("timebox_storage") != undefined) {
