@@ -1,10 +1,10 @@
 <script>
   let currentTab = 1;
   let template = {
-      priorities: [],
-      dump: "",
-      schedule: JSON.parse(JSON.stringify(Array(19).fill({ 0: "", 30: "" }))),
-    };
+    priorities: [],
+    dump: "",
+    schedule: JSON.parse(JSON.stringify(Array(19).fill({ 0: "", 30: "" }))),
+  };
   let data = Array(3).fill(template);
 
   function changeTab(number) {
@@ -69,9 +69,12 @@
     <button class="btn" on:click={resetTab}>
       Reset {(() => {
         switch (currentTab) {
-          case 1: return "Daily";
-          case 2: return "Monthly";
-          case 3: return "Yearly";
+          case 1:
+            return "Daily";
+          case 2:
+            return "Monthly";
+          case 3:
+            return "Yearly";
         }
       })()}
     </button>
@@ -147,10 +150,12 @@
   }
 
   .wrapper {
-    max-width: 920px;
+    max-width: 940px;
+    max-height: calc(100% - 50px);
     width: 90%;
     margin-inline: auto;
-    padding: 25px;
+    margin-block: 25px;
+    overflow-y: scroll;
   }
 
   .wrapper .header {
@@ -163,6 +168,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
   }
 
   .wrapper .tabs .btn {
@@ -172,6 +178,7 @@
     font-size: 14px;
     padding: 7.5px;
     border-radius: 5px;
+    position: relative;
   }
 
   .wrapper .tabs .btn:hover {
@@ -181,17 +188,33 @@
 
   .wrapper .tabs .btn.active {
     color: black;
-    position: relative;
   }
 
-  .wrapper .tabs .btn.active::before {
+  .wrapper .tabs .btn::before {
     width: 100%;
     height: 1px;
     position: absolute;
-    bottom: -3px;
+    bottom: -1px;
     left: 0;
     background-color: black;
     content: "";
+    transform: scaleX(0);
+    transition: all ease-in-out 150ms;
+    z-index: 1;
+  }
+
+  .wrapper .tabs .btn::after {
+    width: 99999px;
+    height: 1px;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    background-color: #d3d3d3;
+    content: "";
+  }
+
+  .wrapper .tabs .active.btn::before {
+    transform: scaleX(1);
   }
 
   .wrapper .content {
