@@ -249,7 +249,7 @@
     text-overflow: ellipsis;
   }
 
-  .wrapper .content .priorities .list .item input {
+  input {
     margin: 0 !important;
   }
 
