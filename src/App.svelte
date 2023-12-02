@@ -22,7 +22,6 @@
   }
 
   function resetTab() {
-    data[currentTab - 1].priorities.length = 0;
     for (const key in template) {
       data[currentTab - 1][key] = JSON.parse(JSON.stringify(template[key]));
     }
@@ -69,7 +68,7 @@
         Yearly
       </button>
     </div>
-    <button class="btn" on:click={resetTab}>
+    <button class="btn" on:click={() => resetTab()}>
       Reset {(() => {
         switch (currentTab) {
           case 1:
