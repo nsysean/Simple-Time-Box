@@ -150,12 +150,18 @@
   }
 
   .wrapper {
-    max-width: 940px;
+    max-width: 920px;
     max-height: calc(100% - 50px);
     width: 90%;
     margin-inline: auto;
     margin-block: 25px;
     overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .wrapper::-webkit-scrollbar {
+    display: none;
   }
 
   .wrapper .header {
