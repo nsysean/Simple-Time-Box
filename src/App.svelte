@@ -150,10 +150,8 @@
   }
 
   .wrapper {
-    max-width: 920px;
     max-height: calc(100% - 50px);
-    width: 90%;
-    margin-inline: auto;
+    width: 100%;
     margin-block: 25px;
     overflow-y: scroll;
     -ms-overflow-style: none;
@@ -167,6 +165,9 @@
   .wrapper .header {
     font-size: 30px;
     font-weight: 500;
+    max-width: 920px;
+    width: 90%;
+    margin-inline: auto;
   }
 
   .wrapper .tabs {
@@ -175,6 +176,9 @@
     display: flex;
     justify-content: space-between;
     overflow: hidden;
+    max-width: 920px;
+    width: 90%;
+    margin-inline: auto;
   }
 
   .wrapper .tabs .btn {
@@ -227,6 +231,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 10px;
+    max-width: 920px;
+    width: 90%;
+    margin-inline: auto;
   }
 
   .wrapper .content .priorities .title {
