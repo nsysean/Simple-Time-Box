@@ -272,17 +272,16 @@
 
   .wrapper .content .dump .area {
     width: 100%;
-    border: 1px solid #e3e3e3;
+    outline: 1px solid #e3e3e3;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
     border-radius: 5px;
     margin-block: 5px;
     outline: none;
     padding: 5px;
-    box-sizing: border-box;
   }
 
   .wrapper .content .dump .area:hover {
-    border: 2px solid #c3c3c3;
+    outline: 2px solid #c3c3c3;
   }
 
   .wrapper .content .schedule .table {
