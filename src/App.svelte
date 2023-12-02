@@ -280,10 +280,6 @@
     padding: 5px;
   }
 
-  .wrapper .content .dump .area:hover {
-    outline: 2px solid #c3c3c3;
-  }
-
   .wrapper .content .schedule .table {
     margin-block: 5px;
     width: 100%;
