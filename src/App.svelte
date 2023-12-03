@@ -251,6 +251,7 @@
   .wrapper .content .priorities .title {
     display: flex;
     justify-content: space-between;
+    height: 18px !important;
   }
 
   .wrapper .content .priorities .title .add {
@@ -270,7 +271,6 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
-    margin-block: 5px;
   }
 
   .wrapper .content .priorities .list .item {
@@ -278,7 +278,7 @@
     box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
     padding: 10px;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin-block: 5px;
     font-size: 14px;
     font-weight: 300;
     display: flex;
