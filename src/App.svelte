@@ -1,9 +1,12 @@
 <script>
+  const size = [19, 31, 12];
+  const pref = [5, 1, 1];
+
   let currentTab = 1;
   let template = {
     priorities: [],
     dump: "",
-    schedule: JSON.parse(JSON.stringify(Array(19).fill({ 0: "", 30: "" }))),
+    schedule: JSON.parse(JSON.stringify(Array(31).fill({ 0: "", 30: "" }))),
   };
   let data = Array(3).fill(template);
 
@@ -117,13 +120,15 @@
       <div class="title">Schedule</div>
       <table class="table">
         <tr>
+          {#if currentTab == 1}
           <th></th>
           <th>:00</th>
           <th>:30</th>
+          {/if}
         </tr>
-        {#each Object.entries(data[currentTab - 1].schedule) as [trash, elm], index}
+        {#each Object.entries(data[currentTab - 1].schedule.slice(0, size[currentTab - 1])) as [trash, elm], index}
           <tr>
-            <td style="text-align: center">{5 + index}</td>
+            <td style="text-align: center">{index + pref[currentTab - 1]}</td>
             <td>
               <input
                 type="text"
@@ -131,6 +136,7 @@
                 bind:value={data[currentTab - 1].schedule[index][0]}
               />
             </td>
+            {#if currentTab == 1}
             <td>
               <input
                 type="text"
@@ -138,6 +144,7 @@
                 bind:value={data[currentTab - 1].schedule[index][30]}
               />
             </td>
+            {/if}
           </tr>
         {/each}
       </table>
